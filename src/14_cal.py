@@ -22,3 +22,16 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+date_info = input("enter input in the following format: '14_cal.py month [year]': ")
+
+date_info_list = date_info.split(' ')
+
+if len(date_info_list) == 0:
+    print(calendar.month(datetime.now().year, datetime.now().month))
+elif len(date_info_list) == 1:
+    print(calendar.month(2020, int(date_info_list[0])))
+elif len(date_info_list) == 2:
+    print(calendar.month(int(date_info_list[1]), int(date_info_list[0])))
+else:
+    print("Invalid format. Should be: '14_cal.py month [year]'")
